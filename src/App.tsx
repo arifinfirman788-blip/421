@@ -420,7 +420,7 @@ export default function App() {
                     icon: LayoutDashboard,
                     items: ['经营数据看板', '客户画像管理', '营销工具配置'],
                     image: '/assets/B端工作台.png',
-                    isPC: true
+                    isPC: false
                   }
                 ].map((card, idx) => (
                   <div key={idx} className="bg-slate-50/50 rounded-[2.5rem] p-10 border border-slate-100 flex flex-col items-center text-center group hover:bg-white hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-500">
@@ -1352,10 +1352,10 @@ export default function App() {
             )}
 
             {activePilotTab === 3 && (
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="max-w-4xl mx-auto items-center">
                 <div className="space-y-10">
-                  <h3 className="text-3xl font-black text-slate-900">用户侧推广具体方式</h3>
-                  <div className="space-y-6">
+                  <h3 className="text-3xl font-black text-slate-900 text-center">用户侧推广具体方式</h3>
+                  <div className="grid sm:grid-cols-2 gap-6">
                     {[
                       { title: '高德 App 站内导流', desc: '通过开屏广告、消息中心、搜索发现等位置进行精准引流。', icon: Smartphone },
                       { title: '线下扫码联动', desc: '在试点景区、酒店前台布置“智能管家”二维码，引导用户入会。', icon: Globe },
@@ -1373,9 +1373,6 @@ export default function App() {
                       </div>
                     ))}
                   </div>
-                </div>
-                <div className="hidden lg:block">
-                  {/* 用户侧推广展示框已移除 */}
                 </div>
               </div>
             )}
