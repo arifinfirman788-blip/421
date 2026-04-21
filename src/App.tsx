@@ -418,25 +418,6 @@ export default function App() {
             subtitle="构建商户部署、服务革新与数据融合的完整生态体系。"
           />
 
-          {/* Tab Navigation */}
-          <div className="flex justify-center mb-16">
-            <div className="inline-flex p-1.5 bg-slate-100 rounded-full shadow-inner">
-              {ecosystemTabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={cn(
-                    "px-8 py-3 rounded-full text-sm font-bold transition-all duration-300",
-                    activeTab === tab.id 
-                      ? "bg-white text-blue-600 shadow-md" 
-                      : "text-slate-500 hover:text-slate-700"
-                  )}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-          </div>
 
           {/* Tab Content */}
           <motion.div
@@ -529,7 +510,18 @@ export default function App() {
                         ? "aspect-video rounded-xl border-[4px] border-slate-800" 
                         : "max-w-[200px] aspect-[9/18] rounded-[2.5rem] border-[6px] border-slate-900"
                     )}>
-                      <img loading="lazy" src={card.image} alt={card.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                      {card.title === 'B端工作台' ? (
+                        <video 
+                          src={import.meta.env.BASE_URL + 'assets/039d91d7bd61fab6c2525a87493d9d04.mp4'} 
+                          className="w-full h-full object-cover"
+                          autoPlay 
+                          loop 
+                          muted 
+                          playsInline
+                        />
+                      ) : (
+                        <img loading="lazy" src={card.image} alt={card.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                      )}
                     </div>
                   </div>
                 ))}
