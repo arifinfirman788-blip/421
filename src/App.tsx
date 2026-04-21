@@ -339,14 +339,12 @@ export default function App() {
                           className="w-full h-full object-cover"
                           autoPlay loop muted playsInline
                         />
-                      ) : (
-                        {card.link ? (
-                          <a href={card.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full hover:opacity-90 transition-opacity">
-                            <img loading="lazy" src={card.image} alt={card.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                          </a>
-                        ) : (
+                      ) : card.link ? (
+                        <a href={card.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full hover:opacity-90 transition-opacity">
                           <img loading="lazy" src={card.image} alt={card.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                        )}
+                        </a>
+                      ) : (
+                        <img loading="lazy" src={card.image} alt={card.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                       )}
                     </div>
                   </div>
