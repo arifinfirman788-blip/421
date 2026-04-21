@@ -118,84 +118,38 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 w-full glass border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-20 items-center">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold shadow-lg shadow-blue-500/20">A</div>
-              <span className="text-2xl font-bold tracking-tight text-slate-900">高德 <span className="text-blue-600">x</span> 华创云信</span>
-            </div>
-            <div className="hidden lg:flex items-center gap-10 text-sm font-bold text-slate-600 uppercase tracking-widest">
-              <a href="#main-practice" className="hover:text-blue-600 transition-colors">主要做法</a>
-            </div>
-          </div>
-        </div>
-      </nav>
+      
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src={import.meta.env.BASE_URL + 'assets/1-1.jpg'} 
-            alt="Hero Background" 
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/30 via-transparent to-slate-900/70" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold uppercase tracking-[0.3em] mb-8 backdrop-blur-md">
-              <Zap className="w-4 h-4" /> 2026 战略合作方案
-            </div>
-            <h1 className="text-5xl md:text-8xl font-black tracking-tight text-white mb-8 leading-[1.1]">
-              共建百万商户 <br />
-              <span className="text-blue-400 drop-shadow-[0_0_30px_rgba(96,165,250,0.5)]">智能体生态</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-200 mb-12 leading-relaxed max-w-3xl mx-auto font-medium">
-              将高德从导航入口升级为目的地消费入口。依托华创云信智能体组网技术，补齐B端深度服务短板，实现流量、数据与商业价值的全面共赢。
-            </p>
-            <div className="flex flex-wrap justify-center gap-6">
-              <div className="flex items-center gap-5 px-8 py-5 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md shadow-xl">
-                <div className="flex -space-x-3">
-                  {[1, 2, 3, 4].map(i => (
-                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white/20 bg-slate-800 overflow-hidden shadow-sm">
-                      <img loading="lazy" src={`https://picsum.photos/seed/user${i}/100/100`} alt="user" referrerPolicy="no-referrer" />
-                    </div>
-                  ))}
-                </div>
-                <div className="text-sm text-left">
-                  <div className="font-black text-white text-lg">1,000,000+</div>
-                  <div className="text-slate-300 font-medium">目标覆盖商户</div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-        
-        <motion.div 
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 text-white/50"
-        >
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-[10px] font-bold uppercase tracking-widest">Scroll Down</span>
-            <div className="w-px h-12 bg-gradient-to-b from-white/50 to-transparent" />
-          </div>
-        </motion.div>
-      </section>
+      
 
       {/* 主要做法 */}
       <section id="main-practice" className="py-32 bg-slate-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <SectionTitle 
-            title="主要做法--构建贵州全域智能体组网生态" 
-          />
+          
+          {/* New Main Title */}
+          <div className="pt-20 pb-24 text-center relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 font-bold text-sm tracking-[0.2em] mb-8 shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                主要做法
+              </div>
+              <h1 className="text-5xl md:text-[5rem] font-black tracking-tight text-slate-900 mb-8 leading-[1.1]">
+                构建贵州全域 <br className="hidden md:block mb-2" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 drop-shadow-sm">
+                  智能体组网生态
+                </span>
+              </h1>
+              <p className="text-xl text-slate-500 font-medium max-w-2xl mx-auto mb-10">
+                以“统一迭代”思维代替“分散建设”，补齐深度服务短板，实现流量、数据与商业价值的全面共赢。
+              </p>
+              <div className="h-1.5 w-32 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto rounded-full shadow-lg" />
+            </motion.div>
+          </div>
+
 
           <div className="space-y-32">
             {/* 1、 政府端 */}
