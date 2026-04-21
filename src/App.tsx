@@ -438,11 +438,9 @@ export default function App() {
                       <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                     <div className="text-center">
-                      <div className="inline-block px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs font-bold mb-3">
+                      <div className="inline-block px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs font-bold">
                         Version {i + 1}.0
                       </div>
-                      <h4 className="text-lg font-black text-slate-900 mb-2">{v.title}</h4>
-                      <p className="text-slate-500 text-sm font-medium">{v.desc}</p>
                     </div>
                   </div>
                 ))}
